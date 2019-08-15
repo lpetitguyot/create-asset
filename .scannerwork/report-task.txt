@@ -1,0 +1,7 @@
+organization=lpetitguyot
+projectKey=lpetitguyot_create-asset
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.184
+dashboardUrl=https://sonarcloud.io/dashboard?id=lpetitguyot_create-asset
+ceTaskId=AWyVivhJqSMqIF6IvlXu
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWyVivhJqSMqIF6IvlXu
