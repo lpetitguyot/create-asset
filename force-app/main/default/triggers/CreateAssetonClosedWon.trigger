@@ -29,7 +29,7 @@ trigger CreateAssetonClosedWon on Opportunity (after update) {
                     a.Quantity = 1;
                     a.Price =  ol.UnitPrice;
                     // a.CurrencyIsoCode = o.CurrencyIsoCode;
-                    // a.Price =  ol.ListPrice;
+                    // a.Price = ol.ListPrice;
                     a.PurchaseDate = o.CloseDate;
                     a.Status = 'Purchased';
                     a.Description = ol.Description;
