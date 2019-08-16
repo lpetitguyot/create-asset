@@ -9,7 +9,7 @@ trigger CreateAssetonClosedWon on Opportunity (after update) {
              
             if(o.isWon == true && o.HasOpportunityLineItem == true && o.RecordTypeId <> OppRecordTypePSId && o.RecordTypeId <> OppRecordTypeExceptionalId){
                 String opptyId = o.Id;
-                OpportunityLineItem[] OLI = [Select UnitPrice, Quantity, PricebookEntry.Product2Id, PricebookEntry.Product2.Name, Description, Production_Id__c, Staging1_Id__c, Staging2_Id__c, Staging3_Id__c, Converted_to_Asset__c  
+                OpportunityLineItem[] OLI = [Select ListPrice, Quantity, PricebookEntry.Product2Id, PricebookEntry.Product2.Name, Description, Production_Id__c, Staging1_Id__c, Staging2_Id__c, Staging3_Id__c, Converted_to_Asset__c  
                                               From OpportunityLineItem 
                                               where OpportunityId = :opptyId  
                                               and Converted_to_Asset__c = false
@@ -27,9 +27,8 @@ trigger CreateAssetonClosedWon on Opportunity (after update) {
                     // a.SerialNumber = o.Serial_Number__c;
                     // Backlog Id 104 - 20180805 LPT a.Quantity = ol.Quantity;
                     a.Quantity = 1;
-                    // a.Price =  ol.UnitPrice;
                     a.CurrencyIsoCode = o.CurrencyIsoCode;
-                    a.Price =  ol.ListPrice;
+                    a.Price = ol.ListPrice;
                     a.PurchaseDate = o.CloseDate;
                     a.Status = 'Purchased';
                     a.Description = ol.Description;
