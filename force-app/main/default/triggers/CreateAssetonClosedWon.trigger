@@ -25,7 +25,7 @@ trigger CreateAssetonClosedWon on Opportunity (after update) {
                     a.Start_Date__c = o.Start_Date__c;
                     a.End_Date__c = o.End_Date__c;
                     // a.SerialNumber = o.Serial_Number__c;
-                    // Backlog Id 104 - 20180805 LPT a.Quantity = ol.Quantity;
+                    Backlog Id 104 - 20180805 LPT a.Quantity = ol.Quantity;
                     a.Quantity = 1;
                     a.CurrencyIsoCode = o.CurrencyIsoCode;
                     a.Price = ol.ListPrice;
